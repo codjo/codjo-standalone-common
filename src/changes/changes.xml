@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<document>
+    <properties>
+        <title>Changes</title>
+    </properties>
+    <body>
+        <release version="2.38" date="2007-09-19" description="Evolution">
+            <action dev="bernaju" type="update">
+                Transformation de la classe ModifyAction en classe public.
+            </action>
+            <action dev="bernaju" type="add">
+                Ajout d'une méthode getAction dans la classe DbToolBar.
+                Cette méthode récupère une action à partir de son identifiant.
+            </action>
+        </release>
+        <release version="2.37" date="2006-12-07" description="Correction">
+            <action dev="hannaoui" type="fix">
+                Correction BUG : Cas particulier non traité sur la méthode « deleteTable »
+                qui supprime par lot de 1000 lignes
+            </action>
+        </release>
+        <release version="2.36" date="2006-11-08" description="Evolution">
+            <action dev="hannaoui" type="update">
+                Modification de la méthode deleteTable qui supprime par lot de 1000lignes
+            </action>
+            <action dev="bernaju" type="update">
+                Transformation de la classe DeleteAction en classe public (+ méthode
+                execute en protected).
+            </action>
+        </release>
+        <release version="2.35" date="2006-08-30" description="Correction">
+            <action dev="hannaou" type="fix">
+                Prise en compte du critère d'update à null dans
+                buildUpdateQueryWithWhereClause.
+            </action>
+        </release>
+        <release version="2.34" date="2006-06-01" description="Correction">
+            <action dev="lopezla" type="fix">
+                Correction du bug dans DateHelper.getDaysCountTo qui ne calcule bien le
+                nombre de jours quand il y a un changement horaire.
+            </action>
+        </release>
+        <release version="2.33" date="2006-05-11" description="Correction">
+            <action dev="acharif" type="fix">
+                Correction Bug lors de l'Optimisation d'un Update (création d'une table
+                temporaire #BO_PORTFOLIO déjà existante).
+            </action>
+        </release>
+        <release version="2.32" date="2006-04-28" description="Correction">
+            <action dev="acharif" type="fix">
+                Prise en compte des tables multi sources dans la construction des clauses.
+            </action>
+        </release>
+        <release version="2.31" date="2006-03-09" description="Correction">
+            <action dev="bernaju" type="add">
+                Ajout d'une méthode qui, dans une chaîne donnée, remplace toutes les
+                occurences
+                d'une chaîne d'origine par une chaîne de destination (StringUtil.java)
+            </action>
+            <action dev="marcona" type="fix">
+                Refactoring partiel pour respect des regles IDEA.
+                passage de fileChooser en deprecated car il est dans codjo-gui-toolkit
+            </action>
+            <action dev="poucher" type="add">
+                Ajout de setName dans DBToolBar et GenericTable pour les tests IHM C/S
+                Ajout des setName SqlRequetor,LoginWindow.
+            </action>
+            <action dev="acharif" type="add">
+                Modification de la gestion du critere selection pour optimisation des
+                update. Si l'operation n'est pas historisee par PERIODE, on convertit
+                la requete "update ... where ...." en une creation de table temporaire
+                avec un index puis un update avec un inner join sur la table tempo.
+                (cf. net.codjo.operation.SqlWhereClauseUtil)
+            </action>
+            <action dev="acharif" type="fix">
+                Modification du BehaviorMemoryManager qui empechait le parametrage de
+                plusieurs
+                operations sur un meme traitement.
+            </action>
+            <action dev="acharif" type="fix">
+                Exclusion de toutes les tables tempo de l'explorateur de tables.
+            </action>
+        </release>
+        <release version="2.30" date="2006-01-16" description="Correction">
+            <action dev="marcona" type="fix">
+                Suppression des @deprecated sans commentaires mis a la version 2.28.
+            </action>
+            <action dev="acharif" type="fix">
+                Modification du BehaviorMemoryManager afin de pouvoir gérer 2 opérations
+                qui utilisent
+                le meme treatmentBehavior.
+            </action>
+            <action dev="acharif" type="add">
+                Correction méthode doWrite (dans
+                net.codjo.common.operation.treatment.TreatmentUnit)lors de
+                l'Update sur un traitement permettant de descendre les rapports d'anomlies
+                vers la Table
+                Destination.
+            </action>
+            <action dev="acharif" type="add">
+                Enrichissement des logs générées
+                (dans net.codjo.common.operation.treatment.AbstractTreatmentBehaviorHome,
+                net.codjo.common.operation.DestinationAnomalyReport,
+                net.codjo.common.utils.QueryHelper).
+            </action>
+        </release>
+        <release version="2.29" date="2005-09-15"
+                 description="Enrichissement de la classe Period">
+            <action type="add">
+                Enrichissement de Period#equals() (dans net.codjo.common.date).
+            </action>
+            <action type="add">
+                Enrichissement de Period#before() (dans net.codjo.common.date).
+            </action>
+            <action type="add">
+                Enrichissement de Period#getDate() et création de DateHelper (dans
+                net.codjo.common.date).
+            </action>
+        </release>
+        <release version="2.28" date="2005-07-04" description="Ajout de la classe Period">
+            <action type="modification">
+                Passage de toutes les classes publiques (hors net.codjo.common.date.Period)
+                a 'deprecated' en
+                attendant leur suppression dans la prochaine version de la librairie.
+            </action>
+            <action type="add">
+                Creation de la classe utilitaire net.codjo.common.date.Period
+            </action>
+        </release>
+        <release version="2.27" date="2005-03-21" description="Evolution">
+            <action dev="virasis" type="add">
+                Passage de la méthode
+                net.codjo.operation.treatment.AbstractTreatmentBehaviorHome.loadExpressionManager
+                en Protected.
+            </action>
+            <action dev="gonnot" type="add">
+                Transformation de la classe AddAction en classe public.
+            </action>
+            <action dev="virasis" type="fix">
+                Deuxième construteur dans la classe
+                net.codjo.operation.treatment.TreatmentBehavior
+                qui permet de passer en paramétre un booléen qui déterminera si oui ou non
+                il faut surcharger
+                le calcul du nombre d'erreur (Anomalie).
+            </action>
+        </release>
+        <release version="2.26" date="2005-03-04" description="Evolution">
+            <action dev="gonnot" type="add">
+                Prise en compte des Types doubles dans la classe TableRendererSorter.
+            </action>
+            <action dev="gonnot" type="add">
+                Transformation de la classe AddAction en classe public.
+            </action>
+        </release>
+        <release version="2.25" date="2004-10-05" description="Evolution">
+            <action dev="virasis" type="add">
+                Gestion de la variable $PREVIOUS_PERIOD$ dans les classes OperationData et
+                Operation.
+            </action>
+            <action dev="rivierv" type="add">
+                La méthode AbstractDetailWindow.getValue() est maintenant protected.
+            </action>
+            <action dev="rivierv" type="add">
+                La méthode AbstractDetailWindow.translateValue() est maintenant protected.
+            </action>
+            <action dev="rivierv" type="add">
+                Prise en compte les DateField dans les écrans de Détail.
+                Modification de la classe net.codjo.utils.sql.AbstractDetailWindow.
+            </action>
+            <action dev="rivierv" type="add">
+                Ajout d'un constructeur sans paramètre dans la classe UpperCaseField.
+            </action>
+        </release>
+        <release version="2.24" date="2004-02-19" description="Correction">
+            <action dev="abouecona" type="fix">
+                Modification du retour d'erreur des traitements. Le bug etait en cas
+                d'update, retour d'un
+                nbre d'erreurs cumulés != du nbre reel d'erreurs.
+                cf : TreatmentBehavior.java methode : getRealErrorNumber(Connection con,
+                Table srcDb,
+                Operation ope)
+            </action>
+        </release>
+        <release version="2.23" date="2004-01-22" description="Correction">
+            <action dev="bernaju" type="fix">
+                Modification de la méthode refreshGenericTable dans la classe
+                AbstractDetailAction.
+                Correction du bogue sur les boutons precedents et suivants des écrans de
+                détail.
+            </action>
+            <action dev="bernaju" type="fix">
+                Modification des positions des boutons Valider et Annuler dans
+                LinkTableDetailWindow.
+            </action>
+        </release>
+        <release version="2.22" date="2004-01-20" description="Evolution">
+            <action dev="levequt" type="add">
+                Modification de la méthode initColumnClassName dans la classe
+                GenericTableModel.
+                Ajout des cas FLOAT et DOUBLE pour permettre l'affichage en liste de ces 2
+                types de colonne.
+            </action>
+        </release>
+        <release version="2.21" date="2004-01-05" description="Evolution">
+            <action dev="dufourl" type="fix">
+                La gestion du menu "Fenêtre" permettait d'afficher seulement une liste de
+                9 fenêtres. Au-delà, une ligne apparaissait "Suite des fenêtres...", mais
+                elle
+                est inactive. Nous avons rendu paramétrable le nombre maximum de lignes
+                dans
+                ce menu en rajoutant un paramètre static dans WindowMenuItem. Ce paramètre
+                est appelé par un getter dans WindowMenuManager pour afficher
+                le "Suite des fenêtres..." après le bon nombre de lignes. Ce paramètre est
+                accessible pour l'application via un getter et un setter dans WindowMenu,
+                et
+                en tant que paramètre de construction de WindowMenu. C'est un int.
+            </action>
+        </release>
+        <release version="2.20" date="2003-12-18" description="Correction">
+            <action dev="bernaju" type="fix">
+                Tris dans les combos des noms de tables et des noms de champs
+                dans GuiFieldsDetailWindow et FieldLabelDetailWindow.
+
+                Correction d'un bug lié au requêteur (lorsqu'on modifiait
+                tous les enregistrements renvoyes de telle sorte
+                qu'ils ne repondent plus au critere et qu'ils disparaissent tous,
+                le bouton requeteur ne repondait plus). Corrigé par l'interversion
+                entre deux lignes dans AbstractDetailAction.
+            </action>
+            <action dev="jajmi" type="fix">
+                Correction bug:50 pour l'agrandissement du message d'erreur.
+            </action>
+        </release>
+        <release version="2.19" date="2003-12-09" description="Correction">
+            <action dev="marcona" type="fix">
+                Correction du bug d'import en longueur variable dans la classe
+                net.codjo.operation.imports.FieldImport : si le premier champ du
+                fichier etait nul (ie fichier commencant par le separateur, tout
+                etait décalé. (cf net.codjo.imports.common.FieldImport dans codjo-imports)
+            </action>
+        </release>
+        <release version="2.18" date="2003-10-28" description="Evolution">
+            <action dev="spina" type="add">
+                Ajout d'une méthode permettant de tester le nombre de
+                connexions par utilisateur et par application.
+
+                La vérification est assurée par la procédure stockée
+                'sp_COMMON_Nb_Connexion'. Cette procédure sera
+                packagée par le developpeur avec les livrables de l'application.
+                Emplacement de la procédure stockée : conf\sql\StoredProcedure.
+
+                Le contrôle du nombre de connexions s'effectue si l'utilisateur
+                choisi l'environnement 'recette' ou 'production' dans l'IHM
+                de connexion (LoginWindow).
+
+                Le contrôle de présence de la procédure stockée est faite dans tout
+                les environnements afin d'eviter qu'on l'oublie a la livraison !
+
+                ATTENTION: le contrôle est basé sur les libellés des properties
+                'server.url.production' et 'server.url.recette'
+                du fichier Application.properties de l'application
+                'production' ou 'recette' MAJ/min indifféremment.
+            </action>
+        </release>
+        <release version="2.17" date="2003-10-24"
+                 description="J'ai trouve le projet dans cet etat!">
+            <action dev="spina" type="add">
+                Je n'en sais rien !.
+            </action>
+        </release>
+    </body>
+</document>

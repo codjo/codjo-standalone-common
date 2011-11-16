@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+
+<document>
+
+    <properties>
+        <title>common</title>
+    </properties>
+
+    <body>
+        <section name="Common">
+            <p>
+                Le projet Common... bla bla bla...
+            </p>
+        </section>
+        <section name="Nouveautés: le LoginWindow nouveau est arrivé !">
+            <source><![CDATA[
+		Ajout d'une méthode permettant de tester le nombre de
+		connexions par utilisateur et par application.
+		
+		La vérification est assurée par la procédure stockée
+		'sp_COMMON_Nb_Connexion'. Cette procédure sera
+		packagée par le developpeur avec les livrables de l'application.
+		Emplacement de la procédure stockée : conf\sql\StoredProcedure.
+		
+		Le contrôle du nombre de connexions s'effectue si l'utilisateur
+		choisi l'environnement 'recette' ou 'production' dans l'IHM
+		de connexion (LoginWindow).
+		
+		Le contrôle de présence de la procédure stockée est faite dans tout
+		les environnements afin d'eviter qu'on l'oublie a la livraison !
+		
+		ATTENTION: le contrôle est basé sur les libellés des properties
+		           'server.url.production' et 'server.url.recette'
+		           du fichier Application.properties de l'application
+		           'production' ou 'recette' MAJ/min indifféremment.
+            ]]>
+            </source>
+        </section>
+    </body>
+</document>

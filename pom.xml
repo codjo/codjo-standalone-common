@@ -1,0 +1,67 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+
+    <!--
+     | POM Relationships
+     -->
+
+    <parent>
+        <groupId>net.codjo.pom</groupId>
+        <artifactId>codjo-pom-library</artifactId>
+        <version>SNAPSHOT</version>
+    </parent>
+    <groupId>net.codjo.standalone-common</groupId>
+    <artifactId>codjo-standalone-common</artifactId>
+    <version>4.8-SNAPSHOT</version>
+    <dependencies>
+        <dependency>
+            <groupId>net.codjo.expression</groupId>
+            <artifactId>codjo-expression</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>net.codjo.fake-db</groupId>
+            <artifactId>codjo-fake-db</artifactId>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>log4j</groupId>
+            <artifactId>log4j</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>net.codjo.jconnect</groupId>
+            <artifactId>codjo-jconnect</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>net.codjo.gui-toolkit</groupId>
+            <artifactId>codjo-gui-toolkit</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>net.codjo.util</groupId>
+            <artifactId>codjo-util</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>net.codjo.broadcast</groupId>
+            <artifactId>codjo-broadcast-common</artifactId>
+            <optional>true</optional>
+        </dependency>
+    </dependencies>
+    <!--
+    | Project Information
+    -->
+
+    <name>Lib &gt; Standalone Common</name>
+    <description>Librairie Common pour les applications standalone</description>
+    <inceptionYear>2006</inceptionYear>
+
+    <!--
+    | Environment Information
+    -->
+
+    <scm>
+        <connection>scm:git:https://github.com/codjo/codjo-standalone-common.git</connection>
+        <developerConnection>scm:git:https://github.com/codjo/codjo-standalone-common.git</developerConnection>
+        <url>https://github.com/codjo/codjo-standalone-common</url>
+    </scm>
+
+</project>

@@ -69,7 +69,7 @@ public class DetailWindowTest extends TestCase {
               {"FAMILY_ID", "FAMILY_NAME"},
                 {7, "Devise"}
             };
-        ResultSet rs = new FakeResultSet(matrix);
+        ResultSet rs = new FakeResultSet(matrix).getStub();
         detailInterface.fillComponent(columns, rs);
 
         assertEquals("FAMILY_ID", detailInterface.FAMILY_ID.getText(), "7");
@@ -77,12 +77,10 @@ public class DetailWindowTest extends TestCase {
     }
 
 
+    @Override
     protected void setUp() throws Exception {
         detailInterface = new DetailWindow_ForTest();
     }
-
-
-    protected void tearDown() {}
 
 
     /**

@@ -21,14 +21,6 @@ import junit.framework.TestSuite;
 public class SourceAnomalyReportTest extends TestCase {
     TestEnvironnement testEnv;
 
-    /**
-     * Constructor for the SourceAnomalyReportTest object
-     *
-     * @param name Description of Parameter
-     */
-    public SourceAnomalyReportTest(String name) {
-        super(name);
-    }
 
     public void test_clone() throws Exception {
         AnomalyReport report = new SourceAnomalyReport();
@@ -135,7 +127,7 @@ public class SourceAnomalyReportTest extends TestCase {
                 {"ANOMALY", "ANOMALY_LOG"},
                 {new Integer(0), null}
             };
-        ResultSet rs = new FakeResultSet(matrix);
+        ResultSet rs = new FakeResultSet(matrix).getStub();
         rs.next();
 
         // Verifie Etat Originel

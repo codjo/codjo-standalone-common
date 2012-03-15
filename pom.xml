@@ -13,7 +13,7 @@
     </parent>
     <groupId>net.codjo.standalone-common</groupId>
     <artifactId>codjo-standalone-common</artifactId>
-    <version>4.8-SNAPSHOT</version>
+    <version>4.8</version>
     <dependencies>
         <dependency>
             <groupId>net.codjo.expression</groupId>
